@@ -2,7 +2,7 @@
 ---
 *MyCalculator.java*  
 + 실행화면  
-![calc.png](..%2F..%2F..%2F..%2FDesktop%2Fcalc.png)
+![calc.png](calc.png)
 ___
 ## 프로젝트의 목적
 >그동안 학습했던 내용을 이용하여 사칙연산이 가능한 계산기를 구현

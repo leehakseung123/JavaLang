@@ -22,7 +22,7 @@ public class NpcUse
         // 필드 접근
         saram1.name = "경비";     // 6. 멤버 변수에 직접 접근
         saram1.hp = 100;         // 7. 멤버 변수에 직접 접근
-        System.out.println(saram1.name + ":" + saram1.hp)       // 8. 출력
+        System.out.println(saram1.name + ":" + saram1.hp);   // 8. 출력
         //9.메서드 호출
         saram1.say();
     }

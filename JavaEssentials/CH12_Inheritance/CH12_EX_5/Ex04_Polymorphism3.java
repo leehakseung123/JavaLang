@@ -28,7 +28,7 @@ public class Ex04_Polymorphism3
         {
             Tiger tiger = (Tiger) obj;              // 2.원래의 형태로 다시 형변환해서 사용
             tiger.doMove();
-        } else () {
+        } else {
             Lion lion = (Lion) obj;                 // 3.원래의 형태로 다시 형변환해서 사용
             lion.doMove();
         }

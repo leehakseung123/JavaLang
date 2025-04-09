@@ -75,10 +75,12 @@
       ``` ex.) int my class = (age > 20) ? 2:1```
 ---
 ## 단항, 이항, 삼항 연산자
-> 단항 연산자 : ++x에서 ++는 하나의 피연산자만으로 이루어진 식으로 연산을 수행  
-> 이항 연산자 : x + y에서 + 연산자는 피연산자를 두 개 가지고 식을 구성한다.  
-> 삼항 연산자 : 항이 3개 있어야 한다.  
->           - ``` 1항 ? 2항 : 3항;```
+- 단항 연산자 : ++x에서 ++는 하나의 피연산자만으로 이루어진 식으로 연산을 수행  
+- 이항 연산자 : x + y에서 + 연산자는 피연산자를 두 개 가지고 식을 구성한다.  
+
+- 삼항 연산자 : 항이 3개 있어야 한다.  
+     - ``` 1항 ? 2항 : 3항;```
+  - 삼항연산자는 중복해서 쓰지 않기를 권장함.
 ---
 ## 연산자 우선순위
 
@@ -101,3 +103,150 @@
 | 12   | \|\|            | 논리 OR              |
 | 13   | ?:              | 조건(삼항) 연산자    |
 | 14   | =, +=, -=, *=   | 대입 및 할당 연산자  |
+
+---
+
+---
+
+## tossbank 부캠
+```java
+public class ex06 {
+    public static void main(String[] args) {
+        //연산자의 종류 - 이항연산자(산비논대)
+        //단항 : ++ -- !(논리반전) (타입) ~(비트반전) 우선순위가 가장 높다
+        //산술 : + - * / %     << >> >>>(비트단위 이동연산자)
+        //비교 : < > <= >= == !=  instanceof(객체비교연산자)
+        //논리 : && ||         & | ^(비트단위 논리연산자)
+        //삼항 : ? :
+        //대입 : = 복합대입(+= -= *= /= %= ...)      우선순위가 가장 낮다.
+        int j = 20;
+        short s = (short)j; //작은 타입 <= 큰 타입 : 강제형변환
+
+        int k = 10;  //32bit 000000....1010
+        int m = ~k;  //      111111....0101
+        System.out.println( Integer.toBinaryString(k) );
+        System.out.println( Integer.toBinaryString(m) );
+
+        String binaryString = String.format("%32s", Integer.toBinaryString(k)).replace(" ","0");
+        System.out.println(binaryString);
+    }
+}
+```
+
+```java
+public class ex07 {
+    public static void main(String[] args) {
+//산술 : + - * / %     << >> >>>(비트단위 이동연산자)
+        int i = 10;
+        int j = 3;
+        System.out.println( i + j );
+        System.out.println( i - j );
+        System.out.println( i * j );
+        System.out.println( i / j );//나눗셈의 몫
+        System.out.println( i % j );//나눗셈의 나머지
+
+        //나머지 연산자 %
+        int k = 123;
+        //연습문제 - 나머지연산자를 이용하여
+        //1. 일의 자릿수 3을 출력하시오.
+        System.out.println( k % 10 );
+        //2. 십의 자릿수 2를 출력하시오.
+        System.out.println( (k / 10) % 10 );
+        //3. 백의 자릿수 1을 출력하시오.
+        System.out.println( (k / 100) % 10 );
+        double d = 3.567;
+        //4. 소숫점 첫째자리를 출력하시오.
+        //출력예) 5
+        System.out.println( (int)(d*10 % 10) );
+        //*소숫점 없애기
+        //1. Math.floor
+        //2. (int) 형변환연산자
+
+        //5. 소숫점 첫째자리에서 반올림하여 출력하시오.
+        //출력예) 4.0
+        System.out.println(Math.round(d));
+        //Math.round() 첫째자리 반올림
+
+        //1. 0.5을 더해준다.
+        //2. (int)형변환연산자로 소수점을 날린다.
+        //3. 결과적으로 반올림이 된다.
+        //예) 3.49 => 3 +0.5 (int)3.99  => 3
+        //    3.5 => 4  +0.5 (int)4.0 => 4
+        //    3.99 => 4
+
+        //6. 소숫점 둘째자리에서 반올림하여 출력하시오.
+        //출력예) 3.6
+        System.out.println(Math.round(d*10) / 10.0);
+    }
+}
+```
+```java
+public class ex08 {
+    public static void main(String[] args) {
+        //비교연산자
+        // A > B : A가 B보다 큰가?  true/false
+        //   <   : 작은가?
+        //   ==  : 같은가?
+        //   !=  : 같지 않은가?
+        //   >=  : A가 B보다 크거나(OR) 같은가?
+        //       : A > B || A == B
+        //   <=  : 작거나 같은가
+        //       : A < B || A == B
+
+        //논리연산자
+        //AND && : ~이고, ~이면서
+        //OR ||  : ~이거나, 또는, ~중의 하나
+        //NOT !  : ~아니다
+
+        // T && T : T  둘다 참이면 참
+        // T && F : F
+        // F && T : F
+        // F && F : F
+
+        // T || T : T
+        // T || F : T
+        // F || T : T
+        // F || F : F  둘다 거짓이면 거짓
+
+        // !T : F
+        // !F : T
+
+        // XOR ^ : 비트단위 연산자
+        // 1 ^ 1 = 0
+        // 1 ^ 0 = 1 서로 값이 다르면 1
+        // 0 ^ 1 = 1
+        // 0 ^ 0 = 0
+    }
+}
+```
+
+```java
+public class ex09 {
+    public static void main(String[] args) {
+        // 삼항연산자 : ? : 물음표 연산자
+        // 패턴 : (조건절) ? A값 : B값
+
+        int i =  10 < 20 ? 10 : 20;
+        System.out.println( i );
+
+        //삼항연산자는 중복해서 쓰지 않기를 권장함.
+        int j = (10<20) ? ((20<30) ? 20 : 30) : 40;
+        System.out.println( j );
+
+        //대입연산자
+        // A = B  : B값을 A에 덮어쓰기 한다.
+        // 값의 전달 방향이 오른쪽에서 왼쪽,
+        // 단항연산자이므로 연산순서도 오른쪽에서 왼쪽으로
+        int i2 = 10;
+        int j2 = 20;
+        int k2 = 30;
+        i2 = j2 = k2 = 40;
+        System.out.println( i2 );
+        //복합대입연산자
+        // A += B : A = A + B
+        // A -= B : A = A - B
+        // A *= B : A = A * B
+        // A /= B : A = A / B
+    }
+}
+```

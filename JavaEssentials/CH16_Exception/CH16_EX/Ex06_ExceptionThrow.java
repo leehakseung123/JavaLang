@@ -6,7 +6,7 @@ public class Ex06_ExceptionThrow {
         myMehtod2(n, 0);
     }
 
-    publiic static void myMehtod2(int n1, int n2)
+    public static void myMehtod2(int n1, int n2)
     {
         int r = n1/ n2;     //1. 예외 발생 지점
     }

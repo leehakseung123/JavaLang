@@ -129,3 +129,94 @@ ___
 >> |:-------|:-------|
 >> | float  | 4바이트   |
 >> | double | 8바이트|
+
+
+---
+
+---
+
+## tossbank 부캠 (예제)
+```java
+public class ex03 {
+    public static void main(String[] args) {
+        int myInt = 10;
+        System.out.println("myInt = " + myInt);
+        long myLong = 20L;
+        System.out.println("myLong = " + myLong);
+        short myShort = 30;
+        System.out.println("myShort = " + myShort);
+        byte myByte = 40;
+        System.out.println("myByte = " + myByte);
+        
+        //실수헝
+        float myFloat = 3.14f; // f 넣어야함
+        System.out.println("myFloat = " + myFloat);
+        double myDouble = 6.14;
+        System.out.println("myDouble = " + myDouble);
+
+        //논리형
+        boolean myBoolean = true;
+        System.out.println("myBoolean = " + myBoolean);
+
+        //문자형 char
+        char myChar = '가';
+        System.out.println("myChar = " + myChar);   // 44032 0xAC00
+        // 정수형으로 변환이 가능하다.
+        System.out.println( (int)myChar);
+        System.out.println( (char)0xAC00);  //가
+        //문자코드표 - 아스키코드표, 유니코드표
+        System.out.println((char)65);
+        System.out.println((int)'A');
+
+        // 문자열형 String
+        String myString = "abc";
+        System.out.println("myString = " + myString);
+    }
+}
+
+```
+
+|분류	|자료형|	크기|예시|비고|
+|:--:|:--:|:--:|:--:|:---------------:|
+|정수형	|byte|	1 byte|	byte myByte = 40;|   	-128 ~ 127   |
+|〃|	short	|2 byte|	short myShort = 30;|	-32,768 ~ 32,767|
+|〃|	int|	4 byte|	int myInt = 10;|     	기본 정수형     |
+|〃|	long|	8 byte|	long myLong = 20L;|	숫자 뒤에 L 붙이기|
+|실수형|	float|	4 byte|	float myFloat = 3.14f;|	숫자 뒤에 f 붙이기|
+|〃|	double	|8 byte|	double myDouble = 6.14;|	기본 실수형|
+|논리형|	boolean|	1 byte	|boolean myBoolean = true;|	true or false|
+|문자형|	char	|2 byte	|char myChar = '가';|	유니코드 문자 1개 저장|
+
+```java
+public class ex02 {
+public static void main(String[] args) {
+// 한줄 주석문
+/*
+여러줄
+주석문
+*/
+//출력문
+// + 연산자는 왼쪽이나 오른쪽에 문자열이 있으면
+// 문자열 연결 연산자로 동작함.
+// 둘다 숫자이면 산술연산자로 동작함.
+System.out.println("화면출력");
+System.out.println("화면" + "출력");
+System.out.println("화면" + 10 + 20);
+System.out.println(10 + 20 + "화면");
+//연산자 우선순위가 헷갈리면 소괄호로 묶어준다.
+System.out.println(10 + (20 + "화면"));
+
+        //println print printf
+        //println : 문자열 한줄 출력 + 줄바꿈
+        //print : 줄바꿈 없음
+        //printf : 형식화된 출력문
+        System.out.println("한줄출력후 줄바꿈");
+        System.out.print("한줄출력후 줄바꿈 없음");
+        // \n : 줄바꿈 특수문자
+        System.out.printf("%d\n", 30); //10진수
+        System.out.printf("%o\n", 30); //8진수
+        System.out.printf("%x\n", 30); //16진수
+        System.out.printf("%e\n", 300.0); //지수형 출력
+    }
+}
+```

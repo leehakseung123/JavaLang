@@ -36,3 +36,55 @@
 
 *Ex02_Scanner1.java*  
 *Ex03_Scanner2.java*
+
+---
+
+---
+## tossbank 부캠
+```java
+import java.util.Scanner;
+
+public class ex11 {
+    public static void main(String[] args) {
+        //Scanner클래스 함수들
+        // nextLine() : 문자열을 입력받되 엔터칠때까지(공백포함)
+        // next() : 문자열의 공백까지만 입력받음.
+        // nextInt() : 문자열을 받아서 정수로 반환해줌.
+        // nextFloat() :             실수로 반환해줌.
+        // nextDouble() :            실수로 반환해줌.
+        Scanner scan = new Scanner(System.in);
+        System.out.println("입력하세요:");
+        String str1 = scan.nextLine();
+        System.out.println("str1 = " + str1);
+
+        String str2 = scan.next();
+        System.out.println("str2 = " + str2);
+
+        //해결방안 : nextLine()함수를 한번 실행해준다.
+        scan.nextLine();
+
+        //Exception in thread "main" java.util.InputMismatchException
+        //next()함수에 저장된 버퍼메모리가 정리되지 않아서이다.
+        //해결방안 : nextLine()함수를 한번 실행해준다.
+        int num1 = scan.nextInt();
+        System.out.println("num1 = " + num1);
+
+        scan.close(); //scan객체가 사용중인 리소스(메모리,입출력자원) 정리
+
+    }
+}
+```
+> Scanner를 이용해 문자열과 정수를 입력받는 과정에서, next() 후 남는 개행 문자를 nextLine()으로 처리해 입력 오류를 방지하는 코드
+
+1. `Scanner scan = new Scanner(System.in);` :   
+   표준 입력(System.in) 을 통해 키보드 입력을 받을 수 있게 하는 객체 생성.  
+    Scanner는 java.util 패키지에 있으므로 import 필요.
+
+-  주요 메서드 정리
+
+    | 메서드                          |	설명|
+    |:-----------------------------|:--|
+    | `nextLine()`                 |	줄 단위 입력. 엔터까지 모두 읽음. 공백 포함 가능|
+    | `next()`                     |	단어 단위 입력. 공백 전까지만 읽음|
+    | `nextInt()`                  |	입력값을 정수(int)로 반환. 공백 또는 엔터 입력 필요|
+    | `nextFloat()` / `nextDouble()`	 |입력값을 실수(float/double)로 반환|

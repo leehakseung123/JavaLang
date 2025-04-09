@@ -10,13 +10,13 @@ interface Unit6
 class Human6 implements Unit6
 {
     @Override
-    @SuppressWarnings("deprecation");       // 2.
+    @SuppressWarnings("deprecation")       // 2.
     public void move(String str)
     {
         System.out.println(str);
     }
     @Override
-    public void run(String str);
+    public void run(String str)
     {
         System.out.println(str);
     }

@@ -28,7 +28,7 @@ public class Ex08_WhyThrow {
     {
         Scanner sc = new Scanner(System.in);
 
-        int num1 = sc.mextInt();        // 에러 발생 지점
+        int num1 = sc.nextInt();        // 에러 발생 지점
         int num2 = 10 / num1;           // 에러 발생 지점
         System.out.println(num2);
     }

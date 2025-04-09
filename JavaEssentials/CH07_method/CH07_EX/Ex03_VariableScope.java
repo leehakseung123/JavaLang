@@ -17,7 +17,7 @@ public class Ex03_VariableScope {
             num2++;
             System.out.println(num2);
         }
-        System.out.println(num2);   //각 방 안에 있는 변수를 알 수 있는 방법이 없기 때문에 에러 발생
+        // System.out.println(num2);   //각 방 안에 있는 변수를 알 수 있는 방법이 없기 때문에 에러 발생
 
         for (int i=0; i<3; i++)
         {

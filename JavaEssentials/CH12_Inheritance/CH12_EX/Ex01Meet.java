@@ -1,7 +1,5 @@
 package CH12_EX;
 
-import sun.util.resources.cldr.ta.CalendarData_ta_LK;
-
 interface Greet // 1. 인터페이스
 {
     void greet();

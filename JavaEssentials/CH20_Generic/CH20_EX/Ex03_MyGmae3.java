@@ -7,18 +7,23 @@ class Npc3 {
 }
 
 class Tank3 {
-    pubic String toString() {
+    public String toString() {
         return "This is a Tank3";
     }
 }
 
 class Camp3 {
-    private  Object unit;
+    private Object unit;
 
-    public void se(Object unit) {
+    public void set(Object unit) {
         this.unit = unit;
     }
+
+    public Object get() {
+        return this.unit;
+    }
 }
+
 public class Ex03_MyGmae3 {
     public static void main(String[] args) {
 

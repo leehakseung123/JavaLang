@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JavaEssentials/CH09_ClassBasic/CH09_ClassBasic.iml" filepath="$PROJECT_DIR$/JavaEssentials/CH09_ClassBasic/CH09_ClassBasic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaEssentials/CH26_ProjectMyPhoneBook/CH26_ProjectMyPhoneBook.iml" filepath="$PROJECT_DIR$/JavaEssentials/CH26_ProjectMyPhoneBook/CH26_ProjectMyPhoneBook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaEssentials/JavaEssentials.iml" filepath="$PROJECT_DIR$/JavaEssentials/JavaEssentials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaLang.iml" filepath="$PROJECT_DIR$/.idea/JavaLang.iml" />
+    </modules>
+  </component>
+</project>

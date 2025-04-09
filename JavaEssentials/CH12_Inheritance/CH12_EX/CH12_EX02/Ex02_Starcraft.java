@@ -27,7 +27,7 @@ class Barracks extends Building implements Fly
     }
 
     // 모든 건물이 날면 안되므로 인터페이스로 나는 기능 제공
-    public void flybuilding()
+    public void flyBuilding()
     {
         System.out.println("건물이 날아서 이동하게 합니다.");
     }
@@ -72,7 +72,7 @@ public class Ex02_Starcraft
         Barracks barracks = new Barracks();
         barracks.doBuild();
         barracks.doMakeMarine();
-        barracks.flybuilding();
+        barracks.flyBuilding();
 
         Factory factory = new Factory();
         factory.doBuild();

@@ -1,6 +1,6 @@
 package CH12_EX;
 
-class Unit      // 1. 부모 클래스, 먼저 Unit 클래스 정의
+class Unit1      // 1. 부모 클래스, 먼저 Unit 클래스 정의
 {
     String name;
     int hp;
@@ -16,7 +16,7 @@ class Unit      // 1. 부모 클래스, 먼저 Unit 클래스 정의
     }
 }
 
-class Marine extends Unit       // 2. 자식 클래스, Unit을 상속하여 Marine 클래스로 정의한다.
+class Marine1 extends Unit1       // 2. 자식 클래스, Unit을 상속하여 Marine 클래스로 정의한다.
     // 상속을 통해 부모 클래스의 멤버를 그대로 계승했기 때문에  Marine은 멤버 변수로 name, hp, attack 3 개를 사용가능
 {
     int attack;
@@ -33,7 +33,7 @@ class Marine extends Unit       // 2. 자식 클래스, Unit을 상속하여 Mar
     }
 }
 
-class Medic extends Unit        // 5. 자식 클래스, 메딕 클래스를 유닛 클래스를 상속 받아 정의
+class Medic extends Unit1        // 5. 자식 클래스, 메딕 클래스를 유닛 클래스를 상속 받아 정의
 {
     int heal;       // 6. 멤버 변수
 
@@ -51,7 +51,7 @@ class Medic extends Unit        // 5. 자식 클래스, 메딕 클래스를 유�
 public class MyTerran {
     public static void main(String[] args)
     {
-        Marine unit1 = new Marine();        // 8. 객체 생성
+        Marine1 unit1 = new Marine1();        // 8. 객체 생성
         unit1.name = "마린";                  // 9.
         unit1.hp = 100;                     // 10.
         unit1.attack = 20;
